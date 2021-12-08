@@ -1,11 +1,6 @@
-<html>
-<head>
-    <title>@yield('title')|MyBlog</title>
-</head>
-<body>
+<title>@yield('title')|MyBlog</title>
 @include('layouts.partials.navigation')
 <div class="container">
 @yield('content')
 </div>
-</body>
-</html>
+

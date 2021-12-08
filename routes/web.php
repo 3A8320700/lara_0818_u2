@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +18,9 @@ use App\Http\Controllers\HelloController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('home', function () {
-    return view('home.index');
-});
-Route::get('hello/{name?}',[HelloController::class,'index'])->name("hello.index");
 
+//Route::get('home', function (){
+//    return view('home.index');
+//});
+Route::get('home', [HomeController::class, 'index']);
+Route::get('hello/{name?}', [HelloController::class, 'index'])->name('hello.index');
